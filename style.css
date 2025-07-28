@@ -205,3 +205,175 @@ body {
         margin: 15px 0;
     }
 }
+
+
+/* Banner section */
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 80vh; /* Adjust height as needed */
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+         /* Ken Burns effect for the background image */
+        .banner-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            animation: kenburns 20s infinite;
+            z-index: -1;
+        }
+        @keyframes kenburns {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        /* Banner content */
+        .banner-content {
+            max-width: 800px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5); 
+            border-radius: 10px;
+        }
+        
+        .banner h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .banner p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Call-to-action buttons */
+        .cta-buttons {
+            display:flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap:wrap;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #ff6b6b; /* Adjust color to match your design */
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .cta-button:hover {
+            background-color: transparent;
+            border-color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .cta-button.secondary {
+            background-color: transparent;
+            border-color: white;
+        }
+        
+        .cta-button.secondary:hover {
+            background-color: white;
+            color: #333;
+        }
+         /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .banner {
+                height: 60vh;
+            }
+            
+            .banner h1 {
+                font-size: 2rem;
+            }
+            
+            .banner p {
+                font-size: 1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .cta-button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Services grid container */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Service item styling */
+        .service-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .service-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-caption {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+            margin: top 0.5rem;
+        }
+        .service-description {
+            color: #666;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+         @media (max-width: 480px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
